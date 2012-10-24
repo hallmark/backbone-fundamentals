@@ -6217,7 +6217,7 @@ As we've seen, Backbone provides a great set of building blocks for our JavaScri
 
 Marionette's key benefits include:
 
-* Scaling applications out with modular, event driven architecture
+* Scaling applications out with a modular, event driven architecture
 * Sensible defaults, such as using Underscore templates for view rendering
 * Easy to modify to make it work with your application's specific needs
 * Reducing boilerplate for views, with specialized view types
@@ -6232,7 +6232,7 @@ Marionette's key benefits include:
 
 Marionette follows a similar philosophy to Backbone in that it provides a suite of components that can be used independently of each other, or used together to create a significant advantages for us as developers. But it steps above the structural components of Backbone and provides an application layer, with more than a dozen components and building blocks. 
 
-Marionette's components range greatly in the features they provide, but they all work together to create a composite application layer that can both reduce boilerplate code and provide a much needed application structure. It's core components include:
+Marionette's components range greatly in the features they provide, but they all work together to create a composite application layer that can both reduce boilerplate code and provide a much needed application structure. Its core components include:
 
 * [**Backbone.Marionette.Application**](https://github.com/marionettejs/backbone.marionette/blob/master/docs/marionette.application.md): An application object that starts your app via initializers, and more
 * [**Backbone.Marionette.Application.module**](https://github.com/marionettejs/backbone.marionette/blob/master/docs/marionette.application.module.md): Create modules and sub-modules within the application
@@ -6329,7 +6329,7 @@ And that's it - that's all you need to get the exact same behaviour as the previ
 
 ### Memory Management
 
-In addition to the reduction of code needed to define a view, Marionette includes some advanced memory management in all of it's views, making the job of cleaning up a view instance and it's event handlers, easy.
+In addition to the reduction of code needed to define a view, Marionette includes some advanced memory management in all of its views, making the job of cleaning up a view instance and its event handlers, easy.
 
 Consider the following view implementation:
 
@@ -6376,7 +6376,7 @@ zombieView = new ZombieView({
 myModel.set("email", "jeremy@gmail.com");
 ```
 
-Since we're re-using the save `zombieView` variable for both instances, the first instance of the view will fall out of scope immediately after the second is created. This allows the JavaScript garbage collector to come along and clean it up, which should mean the first view instance is no longer active and no longer going to respond to the model's "change" event.
+Since we're re-using the same `zombieView` variable for both instances, the first instance of the view will fall out of scope immediately after the second is created. This allows the JavaScript garbage collector to come along and clean it up, which should mean the first view instance is no longer active and no longer going to respond to the model's "change" event.
 
 But when we run this code, we end up with the alert box showing up twice!
 
@@ -6384,7 +6384,7 @@ The problem is caused by the model event binding in the view's `initialize` meth
 
 Since the original view is still in scope, and the second view instance is also in scope, changing data on the model will cause both view instances to respond.
 
-Fixing this is easy, though. You just need to call `off` when the view is done with it's work and ready to be closed. To do this, add a `close` method to the view.
+Fixing this is easy, though. You just need to call `off` when the view is done with its work and ready to be closed. To do this, add a `close` method to the view.
 
 ```javascript
 var ZombieView = Backbone.View.extend({
@@ -6980,7 +6980,7 @@ And that's it!
 
 ### Is the Marionette implementation of the Todo app more maintainable?
 
-Derick feels that maintainability largely comes down to modularity, separating responsibilities (SRP and SoC) and other related patterns for keeping concerns from being mixed together. It can however be difficult to simply extract things in to separate modules for the sake of extraction, abstraction, or dividing the concept down in to it's most finite parts. 
+Derick feels that maintainability largely comes down to modularity, separating responsibilities (SRP and SoC) and other related patterns for keeping concerns from being mixed together. It can however be difficult to simply extract things in to separate modules for the sake of extraction, abstraction, or dividing the concept down in to its most finite parts. 
 
 The Single Responsibility Principle (SRP) tells us quite the opposite - that we need to understand the context in which things change. What parts always change together, in _this_ system? What parts can change independently? Without knowing this, we won't know what pieces should be broken out in to separate components and modules, vs put together in to the same module or object. 
 
@@ -6993,7 +6993,7 @@ The way that Derick organizes his files also plays directly into maintainability
 
 ### Marionette And Flexibility
 
-Marionette is a flexible framework, much like Backbone itself. It offers a wide variety of tools to help create and organize an application architecture on top of Backbone, but like Backbone itself, it doesn't dictate that you have to use all of it's pieces in order to use any of them. 
+Marionette is a flexible framework, much like Backbone itself. It offers a wide variety of tools to help create and organize an application architecture on top of Backbone, but like Backbone itself, it doesn't dictate that you have to use all of its pieces in order to use any of them. 
 
 The flexibility and versatility in Marionette is easiest to understand by examining three variations of TodoMVC that have been created for comparison purposes:
 
@@ -7017,7 +7017,7 @@ This flexibility creates a much greater opportunity for Marionette to provide va
 
 This is just the tip of the proverbial ice-berg for Marionette, even for the `ItemView` and `Region` objects that we've explored. There is far more functionality, more features, and more flexibility and customizability that can be put to use in both of these objects. Then we have the other dozen or so components that Marionette provides, each with their own set of behaviors built in, customization and extension points, and more. 
 
-To learn more about Marionette, it's components, the features they provide and how to use them, check out the Marionette documentation, links to the wiki, to the source code, the project core contributors, and much more at [http://marionettejs.com](http://marionettejs.com). 
+To learn more about Marionette, its components, the features they provide and how to use them, check out the Marionette documentation, links to the wiki, to the source code, the project core contributors, and much more at [http://marionettejs.com](http://marionettejs.com). 
 
 
 <p>&nbsp;</p>
